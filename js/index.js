@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const billInput = document.querySelector('input[name="bill"]');
-  const personInput = document.querySelector('input[name="person"]');
-  const tipCustomInput = document.querySelector('input[name="select--custom"]');
+  const billInput = document.querySelector('input[id="bill"]');
+  const errorSpanBill = document.querySelector(".error__input--bill");
+  const personInput = document.querySelector('input[id="person"]');
+  const errorSpanPerson = document.querySelector(".error__input--people");
+  const tipCustomInput = document.querySelector('input[id="select--custom"]');
   const tipList = document.querySelector("ul");
   const resetButton = document.querySelector(".description__button--reset");
   const tipMoneyElement = document.querySelector(
@@ -12,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   let valueTip = 0;
+  updateMoneyValues();
 
   function preventInvalidInput(event) {
     const invalidChars = /[-eE]+/;
@@ -33,8 +36,23 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateMoneyValues() {
     const billValue = parseFloat(billInput.value);
     const tipPercentage = parseFloat(valueTip);
-    console.log(valueTip);
     const numberOfPeople = parseInt(personInput.value);
+
+    errorSpanBill.textContent = "";
+    errorSpanPerson.textContent = "";
+
+    if (isNaN(billValue) || billValue === 0) {
+      errorSpanBill.textContent = "Can't be zero";
+      billInput.style.border = "1px solid red";
+    } else {
+      billInput.style.border = "";
+    }
+    if (isNaN(numberOfPeople) || numberOfPeople === 0) {
+      errorSpanPerson.textContent = "Can't be zero";
+      personInput.style.border = "1px solid red";
+    } else {
+      personInput.style.border = "";
+    }
 
     if (
       isNaN(billValue) ||
@@ -99,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     billInput.value = 0;
     personInput.value = 0;
     valueTip = 0;
-    tipCustomInput.value = ''
+    tipCustomInput.value = "";
     tipList
       .querySelectorAll("li.active")
       .forEach((li) => li.classList.remove("active"));

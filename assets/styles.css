@@ -73,8 +73,20 @@ body {
   justify-content: space-between;
   margin: 0.5rem 0;
 }
-.container .block--left .form__title {
+.container .block--left .form__header {
+  display: flex;
   margin-bottom: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .block--left .form__header .error__input--people,
+.container .block--left .form__header .error__input--bill {
+  font-size: 1rem;
+  color: hsl(0, 0%, 100%);
+  font-weight: 100;
+  color: red;
+}
+.container .block--left .form__header--title {
   color: hsl(186, 14%, 43%);
   font-size: 1rem;
 }
