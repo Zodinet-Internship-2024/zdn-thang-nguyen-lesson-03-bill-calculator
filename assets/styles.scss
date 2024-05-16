@@ -1,0 +1,161 @@
+@import "./global/Global.scss";
+
+* {
+  @include global-styles;
+}
+
+body {
+  background-color: $neutral_Light-grayish-cyan;
+  font-size: $font-size-form-inputs;
+}
+
+.container {
+  padding: 80px 0;
+  .header--word-wrap {
+    text-align: center;
+    color: $neutral_Very-dark-cyan;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+  }
+
+  .caculator {
+    background-color: $neutral_White;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: $border-radius_10;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .content__block {
+    flex: 1;
+    margin: 0 10px;
+  }
+
+  .block--left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 12px;
+    .form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 12px 0;
+      .form--title {
+        margin-bottom: 10px;
+        color: $neutral_Dark-grayish-cyan;
+      }
+      .forn__input {
+        position: relative;
+        input {
+          padding: 12px 12px 12px 32px;
+          border: none;
+          background-color: $neutral_Very-light-grayish-cyan;
+          text-align: right;
+          width: 100%;
+        }
+        svg {
+          position: absolute;
+          width: 8%;
+          height: 100%;
+          padding: 2px;
+          margin-left: 8px;
+          color: $neutral_Light-grayish-cyan;
+        }
+      }
+      ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        .tip__select {
+          text-align: center;
+          padding: 12px 0;
+          border-radius: $border-radius_10;
+          font-size: 24px;
+          background-color: $neutral_Very-dark-cyan;
+          color: $neutral_White;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+        .active {
+          background-color: $primary_Strong-cyan;
+          color: $neutral_Very-dark-cyan;
+        }
+        input {
+          font-size: 24px;
+          border-radius: $border-radius_10;
+          height: 100%;
+          padding: 12px 0;
+          background-color: $neutral_Light-grayish-cyan;
+          text-align: center;
+          width: 100%;
+          color: $neutral_Dark-grayish-cyan;
+          border: none;
+        }
+      }
+    }
+  }
+  .block--right {
+    background-color: $neutral_Very-dark-cyan;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 24px;
+    .description {
+      flex: 1;
+    }
+    .description {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+    }
+    .description__title {
+      padding: 10px 0;
+      color: $neutral_White;
+    }
+    .description__aside {
+      font-size: 12px;
+      color: $neutral_Grayish-cyan;
+    }
+
+    .description__money {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 10px;
+      font-size: 44px;
+      color: $primary_Strong-cyan;
+    }
+
+    .description__button {
+      flex: 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px;
+      button {
+        align-self: flex-end;
+        width: 100%;
+        padding: 12px;
+        background-color: $primary_Strong-cyan;
+        border: none;
+        border-radius: $border-radius_10;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      .active {
+        background-color: $neutral_Dark-grayish-cyan;
+        color: $neutral_Very-dark-cyan;
+      }
+    }
+  }
+}

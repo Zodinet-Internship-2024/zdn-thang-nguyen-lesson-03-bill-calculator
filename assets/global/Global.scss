@@ -1,0 +1,26 @@
+// color
+$primary_Strong-cyan: hsl(172, 67%, 45%);
+$neutral_Very-dark-cyan: hsl(183, 100%, 15%);
+$neutral_Dark-grayish-cyan: hsl(186, 14%, 43%);
+$neutral_Grayish-cyan: hsl(184, 14%, 56%);
+$neutral_Light-grayish-cyan: hsl(185, 41%, 84%);
+$neutral_Very-light-grayish-cyan: hsl(189, 41%, 97%);
+$neutral_White: hsl(0, 0%, 100%);
+
+// Font size for form inputs
+$font-size-form-inputs: 24px;
+
+// Font family
+$font-family_Space-Mono: 'Space Mono', monospace;
+$weight_700: 700;
+
+$border-radius_10: 10px;
+
+//setup clear
+@mixin global-styles {
+    font-family: $font-family_Space-Mono;
+    font-weight: $weight_700;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
