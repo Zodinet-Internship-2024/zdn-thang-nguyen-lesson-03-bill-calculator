@@ -14,7 +14,10 @@
       <div class="caculator">
         <section class="content__block block--left">
           <section class="form">
-            <p class="form__title">Bill</p>
+            <div class="form__header">
+              <label for="bill" class="form__header--title">Bill</label>
+              <span class="error__input--bill"></span>
+            </div>
             <div class="forn__input input--bill">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -31,30 +34,40 @@
                   clip-rule="evenodd"
                 />
               </svg>
-              <input type="number" name="bill" value="0" min="0" />
+              <input type="number" id="bill" value="0" min="0" />
             </div>
           </section>
 
           <section class="form">
-            <p class="form__title">Select Tip %</p>
+            <div class="form__header">
+              <label class="form__header--title">Select Tip %</label>
+            </div>
             <ul class="tip-list">
               <li class="tip__select" value="5">5%</li>
               <li class="tip__select" value="10">10%</li>
               <li class="tip__select" value="15">15%</li>
               <li class="tip__select" value="25">25%</li>
               <li class="tip__select" value="55">55%</li>
-              <input
-                type="number"
-                name="select--custom"
-                placeholder="Custom"
-                min="0"
-                max="100"
-              />
+              <div>
+                <label for="select--custom"></label>
+                <input
+                  type="number"
+                  id="select--custom"
+                  placeholder="Custom"
+                  min="0"
+                  max="100"
+                />
+              </div>
             </ul>
           </section>
 
           <section class="form">
-            <p class="form__title">Number of People</p>
+            <div class="form__header">
+              <label for="person" class="form__header--title"
+                >Number of People</label
+              >
+              <span class="error__input--people"></span>
+            </div>
             <div class="forn__input input--peple">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +79,7 @@
                   d="M10 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM3.465 14.493a1.23 1.23 0 0 0 .41 1.412A9.957 9.957 0 0 0 10 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 0 0-13.074.003Z"
                 />
               </svg>
-              <input type="number" name="person" value="0" min="0" />
+              <input type="number" id="person" value="0" min="0" />
             </div>
           </section>
         </section>
@@ -94,6 +107,6 @@
         </section>
       </div>
     </div>
-    <script src="./index.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

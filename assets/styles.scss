@@ -66,8 +66,21 @@ body {
       flex-direction: column;
       justify-content: space-between;
       margin: 0.5rem 0;
-      &__title {
+      &__header {
+        display: flex;
         margin-bottom: 10px;
+        align-items: center;
+        justify-content: space-between;
+
+        .error__input--people,
+        .error__input--bill {
+          font-size: 1rem;
+          color: $neutral_White;
+          font-weight: 100;
+          color: red;
+        }
+      }
+      &__header--title {
         color: $neutral_Dark-grayish-cyan;
         font-size: 1rem;
       }
