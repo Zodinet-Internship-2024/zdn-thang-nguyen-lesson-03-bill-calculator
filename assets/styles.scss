@@ -1,4 +1,5 @@
-@import "./global/Global.scss";
+@import "./common/global";
+@import "./common/responsive";
 
 * {
   @include global-styles;
@@ -6,7 +7,18 @@
 
 body {
   background-color: $neutral_Light-grayish-cyan;
-  font-size: $font-size-form-inputs;
+
+  @include desktop {
+    font-size: $font-size-desktop;
+  }
+
+  @include tablet {
+    font-size: $font-size-tablet;
+  }
+
+  @include mobile {
+    font-size: $font-size-mobile;
+  }
 }
 
 .container {
@@ -22,16 +34,25 @@ body {
     background-color: $neutral_White;
     width: 60%;
     margin: 0 auto;
+    margin-top: 2rem;
     border-radius: $border-radius_10;
-    padding: 20px;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+
+    @include mobile {
+      flex-direction: column;
+      margin: 0;
+      width: 100%;
+    }
+    @include tablet {
+      width: 80%;
+    }
   }
 
   .content__block {
     flex: 1;
-    margin: 0 10px;
+    margin: 0 0.5rem;
   }
 
   .block--left {
@@ -39,25 +60,26 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0 12px;
     .form {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      margin: 12px 0;
-      .form--title {
+      margin: 0.5rem 0;
+      &__title {
         margin-bottom: 10px;
         color: $neutral_Dark-grayish-cyan;
+        font-size: 1rem;
       }
       .forn__input {
         position: relative;
         input {
-          padding: 12px 12px 12px 32px;
+          padding: 0.5rem 0.5rem 0.5rem 1.3rem;
           border: none;
           background-color: $neutral_Very-light-grayish-cyan;
           text-align: right;
           width: 100%;
+          font-size: $font-size-form-inputs;
         }
         svg {
           position: absolute;
@@ -72,12 +94,12 @@ body {
         list-style: none;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
+        gap: 0.5rem;
         .tip__select {
           text-align: center;
-          padding: 12px 0;
+          padding: 0.5rem 0;
           border-radius: $border-radius_10;
-          font-size: 24px;
+          font-size: 1rem;
           background-color: $neutral_Very-dark-cyan;
           color: $neutral_White;
           cursor: pointer;
@@ -91,10 +113,10 @@ body {
           color: $neutral_Very-dark-cyan;
         }
         input {
-          font-size: 24px;
+          font-size: 1rem;
           border-radius: $border-radius_10;
           height: 100%;
-          padding: 12px 0;
+          padding: 0.5rem 0;
           background-color: $neutral_Light-grayish-cyan;
           text-align: center;
           width: 100%;
@@ -108,30 +130,32 @@ body {
     background-color: $neutral_Very-dark-cyan;
     display: flex;
     flex-direction: column;
-    padding: 12px 24px;
+    padding: 0.5rem 1rem;
     .description {
       flex: 1;
     }
     .description {
       display: grid;
       grid-template-columns: auto 1fr;
-      gap: 10px;
+      gap: 0.5rem;
     }
     .description__title {
-      padding: 10px 0;
+      padding: 0.5rem 0;
       color: $neutral_White;
+      font-size: 1rem;
     }
     .description__aside {
-      font-size: 12px;
+      font-size: 0.5rem;
       color: $neutral_Grayish-cyan;
+      font-size: 0.5rem;
     }
 
     .description__money {
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      padding: 10px;
-      font-size: 44px;
+      padding: 0.5rem;
+      font-size: 1.8rem;
       color: $primary_Strong-cyan;
     }
 
@@ -140,11 +164,11 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 12px;
+      padding: 0.5rem;
       button {
         align-self: flex-end;
         width: 100%;
-        padding: 12px;
+        padding: 0.5rem;
         background-color: $primary_Strong-cyan;
         border: none;
         border-radius: $border-radius_10;
